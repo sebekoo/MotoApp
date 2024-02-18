@@ -12,16 +12,16 @@ public class EmployeeRepository
         _employees.Add(employee);
     }
 
+    public Employee GetById(int id)
+    {
+        return _employees.Single(item => item.Id == id);
+    }
+
     public void Save()
     {
         foreach (var employee in _employees)
         {
             Console.WriteLine(employee);
         }
-    }
-
-    public Employee GetById(int id)
-    {
-        return _employees.Single(item => item.Id == id);
     }
 }
