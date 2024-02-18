@@ -2,10 +2,15 @@
 
 using MotoApp.Entities;
 
-public class GenericRepository<T>
+public class ListRepository<T> : IRepository<T>
     where T : class, IEntity, new()
 {
     private readonly List<T> _items = [];
+
+    public IEnumerable<T> GetAll()
+    {
+        return _items.ToList();  // ToList - tworzy nowy obiekt, dzieki temu operujmy na kopii, a nie na oryginale
+    }
 
     public T GetById(int id)
     {
@@ -25,9 +30,6 @@ public class GenericRepository<T>
 
     public void Save()
     {
-        foreach (var item in _items)
-        {
-            Console.WriteLine(item);
-        }
+        // save is not required with List
     }
 }
