@@ -16,7 +16,7 @@ public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
 
     public IEnumerable<T> GetAll()
     {
-        return _dbSet.OrderBy(item => item.Id).ToList(); // OrderBy sortowanie
+        return _dbSet.OrderBy(item => item.Id).ToList(); // OrderBy sortowanie wg Id
     }
 
     public T GetById(int id)

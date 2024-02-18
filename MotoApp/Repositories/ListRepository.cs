@@ -9,7 +9,7 @@ public class ListRepository<T> : IRepository<T>
 
     public IEnumerable<T> GetAll()
     {
-        return _items.ToList();  // ToList - tworzy nowy obiekt, dzieki temu operujmy na kopii, a nie na oryginale
+        return _items.ToList();  // ToList - tworzy nowy obiekt, dzieki temu operujmy na kopi, a nie na oryginale
     }
 
     public T GetById(int id)
