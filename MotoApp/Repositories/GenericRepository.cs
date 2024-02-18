@@ -2,13 +2,13 @@
 
 using MotoApp.Entities;
 
-public class GenericRepository<T>
+public class GenericRepository<T> where T : IEntity
 {
     private readonly List<T> _items = [];
 
     public void Add(T item)
     {
-        //item.Id = _items.Count + 1;
+        item.Id = _items.Count + 1;
         _items.Add(item);
     }
 
