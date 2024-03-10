@@ -19,7 +19,7 @@ public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
         return _dbSet.OrderBy(item => item.Id).ToList(); // OrderBy sortowanie wg Id
     }
 
-    public T GetById(int id)
+    public T? GetById(int id)
     {
         return _dbSet.Find(id);
     }
